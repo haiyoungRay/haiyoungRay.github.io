@@ -1,206 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>love you-婷子大哥</title>
-		<link rel="stylesheet" href="assets/css/style.css">
-
-	</head>
-	<body>
-		<div class="g-container">
-			<div class="audio">
-				<audio autoplay="true" controls preload loop id="audio">
-					<source src="./assets/466375.mp3" type="audio/mpeg" />
-				</audio>
-			</div>
-			<div id="text"></div>
-		</div>
-		<script>
-			let divTyping = document.getElementById('text')
-			  let i = 0,
-			    timer = 0;
-			    let str=`有一天,我们可不可以这样相爱,
-			    约定好去每一个彼此都想去的地方,
-			    记在备忘里,
-			    然后一个一个的慢慢实践,
-			    在每一个景点,
-			    拍下两人紧握的双手,
-			    有一天,我们可不可以这样相爱,
-			    去吃每一处想吃的美食,
-			    收集店里的小票,
-			    记录时间地址食物,
-			    再用手机拍下残羹冷炙的身影,
-			    有一天,我们可不可以这样相爱,
-			    逛了无数家店后,
-			    突然手指向同一个方向,
-			    声音传来,
-			    
-			    'this one',
-			    
-			    '就是这件',
-			    
-			    有一天,我们可不可以这样相爱,
-			    
-			    哼起了一段旋律,
-			    
-			    另一个什么也不说的,
-			    
-			    轻轻唱出下一句,
-			    
-			    有一天,我们可不可以这样相爱,
-			    
-			    畅想未来生活时,
-			    
-			    可以惊愕发现,
-			    
-			    心中构筑的小家,
-			    
-			    有着同样的风景,
-			    
-			    有一天,我们可不可以这样相爱,
-			    
-			    在某个角落,
-			    
-			    放一首歌,
-			    
-			    一个喜欢旋律一个喜欢歌词,
-			    
-			    再找一首歌,
-			    
-			    喜欢旋律又喜欢歌词,
-			    
-			    这样的两首歌只能彼此唱来听,
-			    
-			    有一天,我们可不可以这样相爱,
-			    
-			    在对方忙碌的时候,
-			    
-			    适时的退到一旁,
-			    
-			    安静的守候自己的想念,
-			    
-			    等待对方忙完`;
-			
-			  function typing () {
-			    if (i <= str.length) {
-			      divTyping.innerHTML = str.slice(0, i++) + '_'
-			      timer = setTimeout(typing, 200)
-			    }
-			    else {
-			      divTyping.innerHTML = str//结束打字,移除 _ 光标
-			      clearTimeout(timer)
-			    }
-			  }
-				window.onload = function(){
-					 typing()
-				}
-			 
-		</script>
-	</body>
-		<script id="vertexShader" type="x-shader/x-vertex">
-			varying vec2 v_uv;
-			void main() {
-				v_uv = uv;
-				gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.);
-			}
-			</script>
-		<!-- FragmentShader code here -->
-		<!-- // built from the tutorial https://www.youtube.com/watch?v=dhuigO4A7RY -->
-		<script id="fragmentShader" type="x-shader/x-fragment">
-			#define PI2 6.28318530718
-#define PI 3.1415926535897
-
-uniform vec2 u_mouse;
-uniform vec2 u_resolution;
-uniform float u_time;
-
-varying vec2 v_uv;
-
-mat2 r2(float a) {
-    return mat2(cos(a), -sin(a), sin(a),cos(a));
-}
-
-float hash2( vec2 p) {
-    p = fract(p*vec2(125.34, 456.21));
-    p+= dot(p, p+45.32);
-    return fract(p.x*p.y);
-}
-
-vec2 hash( vec2 p ) {
-	p *= mat2( 127.1,-311.7,27.3,215.3 );
-	return 2.*fract(sin(p)*43758.5453123) -1.;
-} 
-
-float star( vec2 p, float flare) {
-
-    float d = length(p);
-    // falloff for light
-    float m = .01/d;
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Post | Ray Blog</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.4.0">
     
-    float col = m;
     
-    // light rays
-    float rays = max(0.,.45 - abs(p.x*p.y*1000.));
-    col += rays * flare;
-    // rotate and do again
-    p *= r2(PI/4.);
-    rays = max(0.,.5 - abs(p.x*p.y*1000.));
-    col += rays *.3 * flare;
-  
-    col *= smoothstep(.5,.2,d);
-    return col;
-    
+    <link rel="preload" href="/assets/css/0.styles.4c0616ae.css" as="style"><link rel="preload" href="/assets/js/app.a69e79be.js" as="script"><link rel="preload" href="/assets/js/6.bc4f9b85.js" as="script"><link rel="preload" href="/assets/js/14.4927aa70.js" as="script"><link rel="preload" href="/assets/js/7.80c884e1.js" as="script"><link rel="prefetch" href="/assets/js/1.6b23bbb5.js"><link rel="prefetch" href="/assets/js/10.ced675c2.js"><link rel="prefetch" href="/assets/js/11.2af77ea6.js"><link rel="prefetch" href="/assets/js/12.e21267a5.js"><link rel="prefetch" href="/assets/js/13.5e940910.js"><link rel="prefetch" href="/assets/js/15.09201c36.js"><link rel="prefetch" href="/assets/js/16.cbbe3395.js"><link rel="prefetch" href="/assets/js/17.e5066ef3.js"><link rel="prefetch" href="/assets/js/18.4ab025e1.js"><link rel="prefetch" href="/assets/js/19.78fe8097.js"><link rel="prefetch" href="/assets/js/20.ad940f2d.js"><link rel="prefetch" href="/assets/js/21.abae7928.js"><link rel="prefetch" href="/assets/js/22.af7b4b69.js"><link rel="prefetch" href="/assets/js/23.107ab191.js"><link rel="prefetch" href="/assets/js/4.cab354d1.js"><link rel="prefetch" href="/assets/js/5.49c6e498.js"><link rel="prefetch" href="/assets/js/8.b340e07e.js"><link rel="prefetch" href="/assets/js/9.2a1fff14.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.31a0f154.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4c0616ae.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><section id="header-wrapper"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link router-link-exact-active router-link-active">Ray Blog </a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/" class="nav-link router-link-exact-active router-link-active">随笔</a></li><li class="nav-item"><a href="/tag/" class="nav-link">技术栈</a></li><li class="nav-item"><a href="https://github.com/haiyoungRay" target="_blank" rel="noopener noreferrer" class="nav-link external">github</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></div></header></section> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link router-link-exact-active router-link-active">Ray Blog </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/" class="nav-link router-link-exact-active router-link-active">随笔</a></li><li class="mobile-nav-item"><a href="/tag/" class="nav-link">技术栈</a></li><li class="mobile-nav-item"><a href="https://github.com/haiyoungRay" target="_blank" rel="noopener noreferrer" class="nav-link external">github</a></li> <li class="mobile-nav-item"><!----></li></ul></div></div></div> <div class="content-wrapper"><div><div id="base-list-layout"><div itemscope="itemscope" itemtype="http://schema.org/Blog" class="ui-posts"><article itemprop="blogPost" itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="ui-post"><meta itemprop="mainEntityOfPage" content="/2020/04/16/nrm/"> <header itemprop="name headline" class="ui-post-title"><a href="/2020/04/16/nrm/" class="nav-link">npm 切换源（nrm|cnpm）</a></header> <p itemprop="description" class="ui-post-summary">
+        本文默认你已经安装了nodejs
+
+因为 npm 默认的源是在国外，我们访问时会比较慢，一般都会使用淘宝的镜像，或者有些有公司自己的镜像，这就涉及到切换源的操作，总结一下这些操作。
+cnpm
+安装
+npm install -g cnpm --registry=https://registry.npm ...
+        </p> <footer><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="ui-post-meta ui-post-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">Haiyoung Ray</span> <span itemprop="address">
+              in beijing
+          </span></div> <div class="ui-post-meta ui-post-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2020-04-16T00:00:00.000Z">
+            Thu Apr 16 2020
+          </time></div> <div itemprop="keywords" class="ui-post-meta ui-post-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg> <a href="/tag/npm">
+            npm
+          </a><a href="/tag/cnpm">
+            cnpm
+          </a><a href="/tag/nrm">
+            nrm
+          </a><a href="/tag/node">
+            node
+          </a></div></footer></article><article itemprop="blogPost" itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="ui-post"><meta itemprop="mainEntityOfPage" content="/2020/04/15/vue-source-code/"> <header itemprop="name headline" class="ui-post-title"><a href="/2020/04/15/vue-source-code/" class="nav-link">vue初探之初始化data</a></header> <p itemprop="description" class="ui-post-summary">
+        
+//options原始用户传入的数据
+function Vue(options){
+	//初始化vue,并且将用户选项传入
+	this._init(options);
+};
+//初始化
+Vue.prototype._init = function(options){
+	let vm = this;
+	vm.$options = options;
+	//拦截数组的方法 和 对象的属性
+ ...
+        </p> <footer><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="ui-post-meta ui-post-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">Haiyoung Ray</span> <span itemprop="address">
+              in beijing
+          </span></div> <div class="ui-post-meta ui-post-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2020-04-15T00:00:00.000Z">
+            Wed Apr 15 2020
+          </time></div> <div itemprop="keywords" class="ui-post-meta ui-post-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg> <a href="/tag/vue">
+            vue
+          </a><a href="/tag/vue源码">
+            vue源码
+          </a><a href="/tag/javascript">
+            javascript
+          </a></div></footer></article><article itemprop="blogPost" itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="ui-post"><meta itemprop="mainEntityOfPage" content="/2020/04/14/test/"> <header itemprop="name headline" class="ui-post-title"><a href="/2020/04/14/test/" class="nav-link">测试</a></header> <p itemprop="description" class="ui-post-summary">
+        
+随着我们的应用越来越大，测试是非常重要的一点，但是是比较浪费时间，项目开发周期也会相应增加
+测试的优点
+提高项目的可靠性
+有效的提升代码质量
+使项目具有文档的作用
+
+测试的分类
+按是否查看代码划分
+名称|说明
+:-:|:-
+黑盒测试|又称功能测试，验证你的代码是否符合功能的预期，只关心软件的输入数据和输出数据。
+白盒测试|验证你的代码是如何实现项目的功能的， ...
+        </p> <footer><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="ui-post-meta ui-post-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">Haiyoung Ray</span> <span itemprop="address">
+              in beijing
+          </span></div> <div class="ui-post-meta ui-post-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2020-04-14T00:00:00.000Z">
+            Tue Apr 14 2020
+          </time></div> <div itemprop="keywords" class="ui-post-meta ui-post-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg> <a href="/tag/测试">
+            测试
+          </a><a href="/tag/javascript">
+            javascript
+          </a></div></footer></article><article itemprop="blogPost" itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="ui-post"><meta itemprop="mainEntityOfPage" content="/2020/04/13/vue-cli/"> <header itemprop="name headline" class="ui-post-title"><a href="/2020/04/13/vue-cli/" class="nav-link">vue-cli安装说明</a></header> <p itemprop="description" class="ui-post-summary">
+        
+npm install -g @vue/cli  //-g 为全局安装 &quot;vue-cli&quot;
+默认你已经安装了nodejs
+创建项目
+创建vue-app项目：
+vue create vue-project
+
+默认配置
+ ...
+        </p> <footer><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="ui-post-meta ui-post-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">Haiyoung Ray</span> <span itemprop="address">
+              in beijing
+          </span></div> <div class="ui-post-meta ui-post-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2020-04-13T00:00:00.000Z">
+            Mon Apr 13 2020
+          </time></div> <div itemprop="keywords" class="ui-post-meta ui-post-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg> <a href="/tag/vue">
+            vue
+          </a><a href="/tag/vue-cli">
+            vue-cli
+          </a><a href="/tag/javascript">
+            javascript
+          </a></div></footer></article><article itemprop="blogPost" itemscope="itemscope" itemtype="https://schema.org/BlogPosting" class="ui-post"><meta itemprop="mainEntityOfPage" content="/2020/04/05/high-function/"> <header itemprop="name headline" class="ui-post-title"><a href="/2020/04/05/high-function/" class="nav-link">高阶函数</a></header> <p itemprop="description" class="ui-post-summary">
+        
+如果一个函数的参数是一个函数
+function callback(){
+	console.log(1);
 }
-
-vec3 star_layer(vec2 p) {
-  vec3 col = vec3(0.);
-	vec2 pg = fract(p)-.5;
-  vec2 id = floor(p);
-  for(int y=-1;y<=1;y++) {
-    for(int x=-1;x<=1;x++) {
-                
-      vec2 offset = vec2(x,y);
-      float pid = hash2(id+offset);
-      float size = fract(pid*345.32);
-      float rn = fract(pid*645.32);
-      //position
-      vec2 pos = pg-offset-(vec2(pid,fract(pid*2.))-.5);
-
-      float star = star(pos,smoothstep(.86,1.,size));
-      // color stuff
-      vec3 wv =  vec3(1., rn, rn)*sin(pid*943.321+u_time*.5)*PI;
-      vec3 color = sin(wv)*1.5+1.5;
-      star *= sin(u_time*2.5+pid*6.2831)*1.+1.5;
-      // slap that math tother
-      col+= star*size*color;
-    }
-  }
-  return col;
+function a(cb){
+	cb()
 }
-  
-void main() {
-  	// Adjust coords to center of the screen and 
-    // corect pixel aspect ratio
-    vec2 uv = (gl_FragCoord.xy-.5*u_resolution.xy)/u_resolution.y;
-    vec2 ms = (u_mouse.xy-u_resolution.xy*.5)/u_resolution.y;
-    uv *= .5;
-    vec3 col = vec3(0.);
-    uv *= r2(ms.x*.25);
-
-    for(float i=0.; i<1.; i+=1./5.) {
-        float depth = fract(i+u_time*.1);
-        float scale = mix(20.,1.,depth);
-        float fade = depth*smoothstep(1.,.9,depth);
-        //uv +=ms;
-		col += star_layer(uv*scale+(i*32.)+ms)*fade;
-    }
-    
-    gl_FragColor = vec4(col,1.0);
+a(callback)
+如果一个函数的返回值是一个函数
+function callback(){
+	console.log(1);
 }
-</script>
-
-		<script src='assets/js/three.min.js'></script>
-		<script src="assets/js/script.js"></script>
-
-
+function a(cb){
+	return cb();
+ ...
+        </p> <footer><div itemprop="publisher author" itemtype="http://schema.org/Person" itemscope="itemscope" class="ui-post-meta ui-post-author"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg> <span itemprop="name">Haiyoung Ray</span> <span itemprop="address">
+              in beijing
+          </span></div> <div class="ui-post-meta ui-post-date"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <time pubdate itemprop="datePublished" datetime="2020-04-05T00:00:00.000Z">
+            Sun Apr 05 2020
+          </time></div> <div itemprop="keywords" class="ui-post-meta ui-post-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg> <a href="/tag/Function">
+            Function
+          </a><a href="/tag/javascript">
+            javascript
+          </a></div></footer></article></div> <!----></div></div></div> <footer class="footer" data-v-fdbf4940><div class="footer-left-wrap" data-v-fdbf4940><ul class="contact" data-v-fdbf4940><li class="contact-item" data-v-fdbf4940><a href="https://github.com/haiyoungRay" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-fdbf4940><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github" data-v-fdbf4940><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" data-v-fdbf4940></path></svg>
+          
+        </a></li></ul></div> <div class="footer-right-wrap" data-v-fdbf4940><ul class="copyright" data-v-fdbf4940><li class="copyright-item" data-v-fdbf4940><a href="/.html" class="nav-link" data-v-fdbf4940>Privacy Policy</a></li><li class="copyright-item" data-v-fdbf4940><a href="/.html" class="nav-link" data-v-fdbf4940>Copyright © Ray Software.All right reserved</a></li></ul></div></footer></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.a69e79be.js" defer></script><script src="/assets/js/6.bc4f9b85.js" defer></script><script src="/assets/js/14.4927aa70.js" defer></script><script src="/assets/js/7.80c884e1.js" defer></script>
+  </body>
 </html>
