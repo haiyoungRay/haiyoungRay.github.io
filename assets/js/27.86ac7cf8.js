@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[27],{236:function(t,s,n){t.exports=n.p+"assets/img/monitor17.b8a3920c.png"},302:function(t,s,n){"use strict";n.r(s);var e={data:()=>({src:n(236)})},r=n(5),c=Object(r.a)(e,(function(){var t=this.$createElement,s=this._self._c||t;return s("div",[s("img",{attrs:{src:this.src}})])}),[],!1,null,null,null);s.default=c.exports}}]);

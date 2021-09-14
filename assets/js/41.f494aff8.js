@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[41],{250:function(t,s,n){t.exports=n.p+"assets/img/monitor5.9c7971cd.jpg"},316:function(t,s,n){"use strict";n.r(s);var c={data:()=>({src:n(250)})},e=n(5),r=Object(e.a)(c,(function(){var t=this.$createElement,s=this._self._c||t;return s("div",[s("img",{attrs:{src:this.src}})])}),[],!1,null,null,null);s.default=r.exports}}]);

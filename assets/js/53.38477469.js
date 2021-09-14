@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[53],{256:function(t,s,e){t.exports=e.p+"assets/img/pagevuex4.b7219c7b.jpg"},322:function(t,s,e){"use strict";e.r(s);var n={data:()=>({src:e(256)})},c=e(5),r=Object(c.a)(n,(function(){var t=this.$createElement,s=this._self._c||t;return s("div",[s("img",{attrs:{src:this.src}})])}),[],!1,null,null,null);s.default=r.exports}}]);

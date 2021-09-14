@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[58],{320:function(t,e,n){"use strict";n.r(e);var a={name:"open",data:()=>({url:"/2021/08/05/vuex4-1/"})},r=n(5),l=Object(r.a)(a,(function(){var t=this.$createElement;return(this._self._c||t)("a",{attrs:{href:this.url,target:"_blank"}},[this._v("这里是要演示的数据")])}),[],!1,null,null,null);e.default=l.exports}}]);
